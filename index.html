@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+</head>
+<!--Boostrap-->
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<!--CSS-->
+<link rel="stylesheet" href="./css/style.css">
+<!--Toastify-->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<div id="grid">
+<body>
+  <nav class="navbar-expand-md navbar-light bg-main">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"></a>
+          <button class="navbar-toggler btn__color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="contenedor_logo">
+                    <img class="logo" src="./img/logo.png" alt="logo de la empresa">
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">
+                        <p class="colorBlanco">Blanco Electronica</p>
+                    </a>
+                  </li>
+                  <div class="carrito">
+
+                    <!--modal-->
+
+                    <!-- Button trigger modal -->
+                        <div class="carrito">
+                          <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img class="imgCarrito" src="./img/carrito.svg" alt="">
+                          </a>
+                        </div>
+                        <div class="modal fade ancho" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel" style = "color: black">Tu carrito de compras</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              
+                              <!--Carrito-->
+
+                              <table class="table">
+                              
+                                <tbody class="tbody">
+                              
+                                </tbody>
+                               
+                              </table>
+
+                              <!--Carrito-->
+                            </div>
+
+
+                            <p class="total">    </p>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="comprar">Finalizar compra</button>
+                                <button type="button" class="btn btn-danger vacio" id="vaciar">Vaciar carrito</button>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                        
+                    <!--modal-->
+
+                  </div>
+              </ul> 
+          </div>
+        </div>
+    </nav>
+
+    <main>
+      <hr>
+      <div class="buscador">
+      <input type="text" id="formulario" class="form-control my-2" placeholder="Ingrese el producto que desea ver">
+      </div>
+
+      <h1>Todos los productos</h1>
+      
+      <!--Alert
+
+      <div class="alert position-sticky top-0 alert-primary agregado" role="alert">
+        Producto agregado al carrito!
+      </div>
+
+      <div class="alert position-sticky alert-danger removido" role="alert">
+        Producto eliminado del carrito!
+      </div>
+
+      <div class="alert position-sticky alert-primary vaciar" role="alert">
+        Carrito vaciado!
+      </div>
+
+      Alert-->
+
+      <div class="categorias" id="resultado"></div>
+    </main>
+
+    <aside>
+        <ul>
+          
+          <li class="titulo">NOTEBOOKS:</li>
+          <ul>
+            <li>-NOTEBOOK ACER A314 22 R3M4 AMD ATHLON SILVER</li>
+            <li>-NOTEBOOK PC BOX PCB-GLW2 CELERON UN43T5300AGCZB</li>
+            <li>-NOTEBOOK POSITIVO BGH AT300N ATOM X5-Z8350</li>
+            <li>-NOTEBOOK GFAST N-100 I4120W INTEL CELERON</li>
+            <li>-NOTEBOOK HDC CY-14N3450-464 INTEL CELERON</li>
+            <li>-NOTEBOOK HP HP 240 G8 / 2Q9S5LT INTEL CELERON</li>
+         </ul>
+          <li class="titulo">CELULARES:</li>
+          <ul>
+            <li>-CELULAR SAMSUNG SM-F926B Z FOLD3 NEGRO</li>
+            <li>-CELULAR SAMSUNG S22 ULTRA / SM-S908E NEGRO</li>
+            <li>-CELULAR SAMSUNG S22+ / SM-S906EZKMARO ROSA</li>
+            <li>-CELULAR SAMSUNG GALAXY A03 SM-A032M AZUL AZUL</li>
+            <li>-CELULAR SAMSUNG GALAXY A13 SM-A135M NEGRO</li>
+            <li>-CELULAR MOTOROLA MOTO G52 XT2221-2 NEGRO NEGRO</li>
+          </ul>
+          <li class="titulo">SMART TV:</li>
+          <ul>
+            <li>-SMART LED TV BGH 32 PULGADAS HD B3219K5</li>
+            <li>-SMART LED ANDROID TV TCL 32 PULGADAS HD L32S61E-F</li>
+            <li>-SMART LED TV PHILIPS 32 PULGADAS HD 32PHD6926/77</li>
+            <li>-SMART LED TV SAMSUNG 50 PULGADAS 4K UHD 50AU7000</li>
+            <li>-SMART LED TV SAMSUNG 32 PULGADAS HD UN32T4300AGCZB</li>
+            <li>-SMART LED ANDROID TV MOTOROLA 32 PULGADAS HD</li>
+            <li>-SMART LED ANDROID TV PHILIPS 32 PULGADAS HD</li>
+            <li>-SMART LED TV SAMSUNG 43 PULGADAS FULL HD</li>
+          </ul>
+        </ul>
+    </aside>
+
+    <footer>
+			<div class="pie__footer">
+				<div>
+					<p class="footerBlanco">Seguinos en nuestras redes sociales:</p>
+				</div>
+				<div class="img-footer">
+					<a href="https://facebook.com" target="_blank">
+						<img class="redesSociales" src="../img/facebook.png" alt="seguinos en facebook">
+					</a>
+						<a href="https://instagram.com" target="_blank">
+						<img class="insta" src="../img/instagram.png" alt="seguinos en instagram">
+					</a>
+						<a href="https://twitter.com" target="_blank">
+						<img class="redesSociales" src="../img/twitter.png" alt="seguinos en twitter">
+					</a>
+				</div>
+				<div>
+					<p class="footerBlanco">Derechos reservados Blanco Electronica © 2022</p>
+				</div>
+			</div>
+		</footer>
+
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+</div>
+</html>

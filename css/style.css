@@ -1,0 +1,231 @@
+*{
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.bg-main{
+    background-image: url(../img/fondoNav.jpg);
+    background-size: 50%;
+    height: auto;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: white;
+}
+
+.navLogo{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+ul{  
+    justify-content: space-around;
+    align-content: flex-end;
+    width: 100%;
+
+} /* este estilo del ul centra la nav de boostrap*/
+
+.categorias{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+}
+
+.contenedorBotonCarrito{
+    display: flex;
+    justify-content: center;
+    background-color: lightslategray
+}
+
+.carrito{
+    width: 4rem;
+    height: 4rem;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.imgCarrito{
+    width: 3rem;
+    height: 3rem;
+    margin-left: .4rem;
+    margin-top: .4rem;
+}
+
+.botonCarrito{
+    border-radius: 2rem;
+    height: 3rem;
+    width: 10rem;
+}
+
+.carrito:hover, .botonCarrito:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.card{
+    width: 100%;
+}
+
+.nav-link{
+    color: black !important;
+    font-size: 2rem;
+}
+
+.card-text{
+    color: black;
+}
+
+.links{
+    text-decoration: none;
+    text-align: center;
+}
+
+main{
+    background-image: url(../img/fondoPrincipal.jpg);
+}
+
+.card-body{
+    background-color: lightslategray !important;
+}
+
+.producto{
+    margin: 1rem;
+    width: 15rem;
+    border: red solid .1rem;
+}
+
+.card-body{
+    border: green solid .1rem;
+}
+
+#formulario{
+    width: 40rem;
+    color:black;
+}
+
+.buscador{
+    display: flex;
+    justify-content: center;
+}
+
+.colorBlanco{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.footerBlanco{
+    color: white;
+}
+
+.pie__footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer{
+    background-color: black;
+}
+
+.img-footer{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+    margin-left: 0.5rem;
+    width: 25%;
+}
+
+.insta{
+    height: 80%;
+}
+
+li{
+    display: flex;
+    color: black;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+aside{
+    grid-area: aside;
+}
+
+#grid{
+    display: grid;
+    grid-template-areas:"nav nav" "aside main" "footer footer";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: repeat(3, auto);
+}
+
+.table__productos{
+    display: flex;
+    flex-direction: column;
+  }
+  .table__productos > img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .table__cantidad > input{
+    width: 1rem;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+
+  p{
+    color: black;
+  }
+
+  .precio{
+    display: flex;
+  }
+
+  .agregado, .removido, .vaciado{
+    display: none;
+  }
+
+  .alert{
+    z-index: 100;
+  }
+
+.logo{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor_logo{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    text-decoration: underline;
+}
+
+.delete{
+    margin-top: 5rem;
+}
+
+aside{
+    background-color: blue;
+}
