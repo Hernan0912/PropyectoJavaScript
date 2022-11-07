@@ -27,13 +27,6 @@ function alCarrito(e){
 
 function agregarEnCarrito(carritoAux){
 
-    /*const alert = document.querySelector('.alert')
-
-    setTimeout(function(){
-        alert.classList.add('agregado')
-    },2000)
-    alert.classList.remove('agregado')*/
-
     const Suma = tbody.getElementsByClassName('sumarCantidad')
 
     for(let i = 0; i < carritoDeCompras.length; i++){
