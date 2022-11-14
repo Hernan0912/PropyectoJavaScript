@@ -99,5 +99,5 @@ const filtrar = () =>{
 }
 
 formulario.addEventListener('keyup', filtrar);
-filtrar();
+
 
