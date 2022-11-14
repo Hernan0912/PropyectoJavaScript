@@ -1,10 +1,11 @@
-/*const listadoProductos = "../productos.json";
+/*let productos = []
+const listadoProductos = "json/productos.json";
 
 fetch(listadoProductos)
     .then(respuesta => respuesta.json())
-    .then(datos => {
-        datos.forEach( elementos => {
-                productos.push(elementos)
+    .then(data => {
+        data.forEach( elementos => {
+                setCatalogo(elementos);
         })        
     })
     .catch(error => console.log(error))
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     fetchData();
 })
 let productos = []
-const listadoProductos = "./productos.json";
+const listadoProductos = "./json/productos.json";
 const fetchData = async () => {
     try{
         const res = await fetch(listadoProductos)
