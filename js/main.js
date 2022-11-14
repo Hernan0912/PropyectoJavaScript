@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     fetchData();
 })
 let productos = []
-const listadoProductos = "./json/productos.json";
+const listadoProductos = "../json/productos.json";
 const fetchData = async () => {
     try{
         const res = await fetch(listadoProductos)
