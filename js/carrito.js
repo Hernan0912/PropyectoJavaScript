@@ -1,10 +1,6 @@
 const tbody = document.querySelector('.tbody')
 let carritoDeCompras = []
-const clickBoton = document.querySelectorAll('.botonCarrito')
 
-clickBoton.forEach(btn => {
-    btn.addEventListener('click', alCarrito)
-})
 
 function alCarrito(e){
     const boton = e.target;
@@ -26,7 +22,6 @@ function alCarrito(e){
 }
 
 function agregarEnCarrito(carritoAux){
-
     const Suma = tbody.getElementsByClassName('sumarCantidad')
 
     for(let i = 0; i < carritoDeCompras.length; i++){
@@ -69,7 +64,6 @@ function renderizarCarrito(){
     carritoTotal()
 
     //Toastify removido del carrito
-    console.log("Voy a quitar un elemento")
     const botonQuitar = document.querySelectorAll(".delete");
     
     for(let h = 0; h < botonQuitar.length; h++){
@@ -85,7 +79,6 @@ function renderizarCarrito(){
             }).showToast();
         })
     }
-    console.log("Boton quitar: ", botonQuitar)
 }
 
 function carritoTotal(){
@@ -93,7 +86,7 @@ function carritoTotal(){
     const precio = document.querySelector(`.total`);
     carritoDeCompras.forEach((item)=>{
         const precioTotal = Number(item.precio)
-        total = total + precioTotal*(item.cantidad); 
+        total = total + precioTotal*(item.cantidad);
     })
 
     precio.innerHTML = `Total de la compra: $${total}`;
@@ -153,7 +146,6 @@ function carritoVacio(){
 
     carritoTotal()
     renderizarCarrito()
-    console.log(carritoDeCompras)
 }
 
 //Sweet alert
@@ -169,22 +161,25 @@ compra.addEventListener("click", () => {
 
 
 //Toastify agregado al carrito
-const botonAgregar = document.querySelectorAll(".botonCarrito");
+const setEventos = () =>{
+            const botonAgregar = document.querySelectorAll('.botonCarrito');
 
-console.log("boton agregar: ",botonAgregar)
-for(let i = 0; i < botonAgregar.length; i++){
-    botonAgregar[i].addEventListener("click", ()=>{
-    Toastify({
-        text: "Agregado al carrito!",
-        duration: 3000,
-        gravity: "bottom",
-        position: "right",
-        style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        for(let i = 0; i < botonAgregar.length; i++){
+            botonAgregar[i].addEventListener('click', alCarrito)
+            botonAgregar[i].addEventListener("click", ()=>{
+            Toastify({
+                text: "Agregado al carrito!",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+                }).showToast();
+            })
         }
-        }).showToast();
-    })
 }
+
 
 
 

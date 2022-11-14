@@ -1,132 +1,45 @@
-const productos = [
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'ACER A314 22 R3M4 AMD ATHLON SILVER',
-        imagen: 'img/acer.png',
-        valor: 125000
-    },
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'PC BOX PCB-GLW2 CELERON UN43T5300AGCZB',
-        imagen: 'img/pcBox.png',
-        valor: 75000
-    },
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'POSITIVO BGH AT300N ATOM X5-Z8350',
-        imagen: 'img/bgh.png',
-        valor: 146000
-    },
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'GFAST N-100 I4120W INTEL CELERON',
-        imagen: 'img/gfast.jfif',
-        valor: 150000
-    },
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'HDC CY-14N3450-464 INTEL CELERON',
-        imagen: 'img/hdc.jfif',
-        valor: 75000
-    },
-    {
-        dispositivo: 'NOTEBOOK',
-        modelo:'HP 240 G8 / 2Q9S5LT INTEL CELERON',
-        imagen: 'img/hp.jfif',
-        valor: 11000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo:'SAMSUNG SM-F926B Z FOLD3 NEGRO',
-        imagen: 'img/zfold.jfif',
-        valor: 400000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo:'SAMSUNG S22 ULTRA / SM-S908E NEGRO',
-        imagen: 'img/s22ultra.jfif',
-        valor: 300000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo:'SAMSUNG S22+ / SM-S906EZKMARO ROSA',
-        imagen: 'img/s22plus.jfif',
-        valor: 290000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo:'SAMSUNG GALAXY A03 SM-A032M AZUL AZUL',
-        imagen: 'img/a03.jfif',
-        valor: 68000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo: 'SAMSUNG GALAXY A13 SM-A135M NEGRO',
-        imagen: 'img/a13.jfif',
-        valor: 73000
-    },
-    {
-        dispositivo: 'CELULAR',
-        modelo: 'MOTOROLA MOTO G52 XT2221-2 NEGRO NEGRO',
-        imagen: 'img/g52.jfif',
-        valor: 135000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED TV BGH 32 PULGADAS HD B3219K5',
-        imagen: 'img/bghTele.jfif',
-        valor: 56000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo: 'LED ANDROID TV TCL 32 PULGADAS HD L32S61E-F',
-        imagen: 'img/tcl.jfif',
-        valor: 53000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED TV PHILIPS 32 PULGADAS HD 32PHD6926/77',
-        imagen: 'img/philips.jfif',
-        valor: 79000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED TV SAMSUNG 50 PULGADAS 4K UHD 50AU7000',
-        imagen: 'img/samsungTele.jfif',
-        valor: 82000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED TV SAMSUNG 32 PULGADAS HD UN32T4300AGCZB',
-        imagen: 'img/samsungTele2.jfif',
-        valor: 70000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED ANDROID TV MOTOROLA 32 PULGADAS HD',
-        imagen: 'img/motorolaTele.jfif',
-        valor: 67000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED ANDROID TV PHILIPS 32 PULGADAS HD',
-        imagen: 'img/philips2.jfif',
-        valor: 58000
-    },
-    {
-        dispositivo: 'SMART',
-        modelo:'LED TV SAMSUNG 43 PULGADAS FULL HD',
-        imagen: 'img/samsungTele3.jfif',
-        valor: 53000
-    },
-]
+/*const listadoProductos = "../productos.json";
+
+fetch(listadoProductos)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach( elementos => {
+                productos.push(elementos)
+        })        
+    })
+    .catch(error => console.log(error))
+    .finally( () => console.log("Proceso Finalizado"))
+
+console.log("productos: ",productos)
+console.log("productos.modelo: ",productos.modelo)*/
 
 
-const producto = document.getElementById("resultado");
+document.addEventListener('DOMContentLoaded', ()=>{
+    fetchData();
+})
+let productos = []
+const listadoProductos = "../productos.json";
+const fetchData = async () => {
+    try{
+        const res = await fetch(listadoProductos)
+        const data = await res.json()
+        setCatalogo(data);
+        setEventos();
+    }catch(error){
+        console.log(error)
+    }finally{
+        console.log("Proceso finalizado")
+    } 
+}
 
-const catalogo = () => {
+const itemsList = document.getElementById("resultado");
+
+const setCatalogo = (datos) => {
+    datos.forEach( elementos => {
+        productos.push(elementos)
+    })
     for (let producto of productos) {
-        producto.innerHTML += 
+        itemsList.innerHTML += 
                 `<div class="card producto title-image" id="resultado">
                     <img src=${producto.imagen} class="card-img-top" alt="...">
                     <div class="card-body">
@@ -143,8 +56,7 @@ const catalogo = () => {
                     </div>
                 </div>`
     }
-} 
-
+}
 const resultado = document.getElementById("resultado"); //toma el valor de los elementos cargados
 
 const formulario = document.getElementById("formulario"); //toma el valor del input del buscador
@@ -179,11 +91,10 @@ const filtrar = () =>{
         }
     }
     if ( resultado.innerHTML === '' ){
-        resultado.innerHTML = `<li>Producto no encontrado</li>`
+        resultado.innerHTML = `<li class="colorBlanco">Producto no encontrado</li>`
     }
 
 }
 
-formulario.addEventListener('keyup', filtrar)
-filtrar();
+formulario.addEventListener('keyup', filtrar);
 
