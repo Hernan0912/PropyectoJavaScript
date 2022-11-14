@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     fetchData();
 })
 let productos = []
-const listadoProductos = "../productos.json";
+const listadoProductos = "./productos.json";
 const fetchData = async () => {
     try{
         const res = await fetch(listadoProductos)
@@ -39,6 +39,7 @@ const setCatalogo = (datos) => {
         productos.push(elementos)
     })
     for (let producto of productos) {
+        console.log("Pinto el body con innerHTML")
         itemsList.innerHTML += 
                 `<div class="card producto title-image" id="resultado">
                     <img src=${producto.imagen} class="card-img-top" alt="...">
@@ -90,11 +91,12 @@ const filtrar = () =>{
             `
         }
     }
-    if ( resultado.innerHTML === '' ){
-        resultado.innerHTML = `<li class="colorBlanco">Producto no encontrado</li>`
-    }
-
+        if ( resultado.innerHTML === '' ){
+                console.log("Pregunto si está vacío")
+                resultado.innerHTML = `<li class="colorBlanco">Producto no encontrado</li>`
+            }
 }
 
 formulario.addEventListener('keyup', filtrar);
+filtrar();
 

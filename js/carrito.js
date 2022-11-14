@@ -162,8 +162,7 @@ compra.addEventListener("click", () => {
 
 //Toastify agregado al carrito
 const setEventos = () =>{
-            const botonAgregar = document.querySelectorAll('.botonCarrito');
-
+        const botonAgregar = document.querySelectorAll('.botonCarrito');
         for(let i = 0; i < botonAgregar.length; i++){
             botonAgregar[i].addEventListener('click', alCarrito)
             botonAgregar[i].addEventListener("click", ()=>{
@@ -179,9 +178,6 @@ const setEventos = () =>{
             })
         }
 }
-
-
-
 
 //Toastify carrito vaciado
 const botonVaciar = document.getElementById("vaciar");
