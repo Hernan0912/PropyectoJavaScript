@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 let productos = []
 const listadoProductos = "./json/productos.json";
+console.log("ListadoProductos: ",listadoProductos)
 const fetchData = async () => {
     try{
         const res = await fetch(listadoProductos)
@@ -47,7 +48,6 @@ const setCatalogo = (datos) => {
                     <div class="card-body">
                         <h5 class="card-title">Tipo: ${producto.dispositivo}</h5>
                         <h5 class="card-model">Modelo: ${producto.modelo}</h5>
-                        <img src="${productos.imagen}" alt="">
                         <div class="precio">
                             <p>Precio: $</p>
                             <p class="card-text"> ${producto.valor}</p>
