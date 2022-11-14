@@ -83,7 +83,7 @@ function renderizarCarrito(){
 
 function carritoTotal(){
     let total = 0;
-    const precio = document.querySelector(`.total`);
+    const precio = document.querySelector(".total");
     carritoDeCompras.forEach((item)=>{
         const precioTotal = Number(item.precio)
         total = total + precioTotal*(item.cantidad);
