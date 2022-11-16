@@ -1,26 +1,8 @@
-/*let productos = []
-const listadoProductos = "json/productos.json";
-
-fetch(listadoProductos)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        data.forEach( elementos => {
-                setCatalogo(elementos);
-        })        
-    })
-    .catch(error => console.log(error))
-    .finally( () => console.log("Proceso Finalizado"))
-
-console.log("productos: ",productos)
-console.log("productos.modelo: ",productos.modelo)*/
-
-
 document.addEventListener('DOMContentLoaded', ()=>{
     fetchData();
 })
 let productos = []
 const listadoProductos = "./json/productos.json";
-console.log("ListadoProductos: ",listadoProductos)
 const fetchData = async () => {
     try{
         const res = await fetch(listadoProductos)
@@ -41,7 +23,6 @@ const setCatalogo = (datos) => {
         productos.push(elementos)
     })
     for (let producto of productos) {
-        console.log("Pinto el body con innerHTML")
         itemsList.innerHTML += 
                 `<div class="card producto title-image" id="resultado">
                     <img src=${producto.imagen} class="card-img-top" alt="...">
@@ -93,7 +74,6 @@ const filtrar = () =>{
         }
     }
         if ( resultado.innerHTML === '' ){
-                console.log("Pregunto si está vacío")
                 resultado.innerHTML = `<li class="colorBlanco">Producto no encontrado</li>`
             }
 }
