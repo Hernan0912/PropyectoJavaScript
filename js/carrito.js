@@ -1,7 +1,6 @@
 const tbody = document.querySelector('.tbody')
 let carritoDeCompras = []
 
-
 function alCarrito(e){
     const boton = e.target;
     const item = boton.closest('.card')
@@ -140,8 +139,6 @@ const vaciar = document.getElementById("vaciar")
 
 function carritoVacio(){
 
-
-
     carritoDeCompras=[];
 
     carritoTotal()
@@ -154,11 +151,10 @@ const compra = document.getElementById("comprar")
 compra.addEventListener("click", () => {
     Swal.fire({
         title: "Su compra fue procesada",
-        html: "<p>Las compras por internet tienen un 15% de recargo, disculpe por no avisarle antes.</p>",
+        html: "<p>Muchas gracias por confiar en nosotros.</p>",
         icon: "success",
     });
 });
-
 
 //Toastify agregado al carrito
 const setEventos = () =>{
@@ -193,6 +189,3 @@ botonVaciar.addEventListener("click", ()=>{
         }
     }).showToast();
 })
-
-
-

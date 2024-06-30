@@ -44,8 +44,6 @@ const resultado = document.getElementById("resultado"); //toma el valor de los e
 
 const formulario = document.getElementById("formulario"); //toma el valor del input del buscador
 
-
-
 const filtrar = () =>{
 
     resultado.innerHTML = '';
@@ -79,5 +77,3 @@ const filtrar = () =>{
 }
 
 formulario.addEventListener('keyup', filtrar);
-
-
